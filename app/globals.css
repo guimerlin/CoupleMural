@@ -109,7 +109,7 @@
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
 
-  /* Updated font family variables to match design brief */
+  /* Updated font family variables to match layout fonts */
   --font-sans: var(--font-source-sans);
   --font-serif: var(--font-playfair);
   --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
@@ -135,5 +135,138 @@
   .gradient-card {
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.8) 100%);
     backdrop-filter: blur(10px);
+  }
+
+  /* Added fallback styles for critical loading states */
+  .min-h-screen {
+    min-height: 100vh;
+  }
+
+  .flex {
+    display: flex;
+  }
+
+  .items-center {
+    align-items: center;
+  }
+
+  .justify-center {
+    justify-content: center;
+  }
+
+  .text-center {
+    text-align: center;
+  }
+
+  .p-4 {
+    padding: 1rem;
+  }
+
+  .mb-4 {
+    margin-bottom: 1rem;
+  }
+
+  .mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .w-16 {
+    width: 4rem;
+  }
+
+  .h-16 {
+    height: 4rem;
+  }
+
+  .w-full {
+    width: 100%;
+  }
+
+  .max-w-md {
+    max-width: 28rem;
+  }
+
+  .rounded-full {
+    border-radius: 9999px;
+  }
+
+  .animate-pulse {
+    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  .text-muted-foreground {
+    color: #6b7280;
+  }
+
+  /* Adicionando estilos críticos para garantir que a interface funcione mesmo sem Tailwind completo */
+  .loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 50%, #fdba74 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+  }
+
+  .loading-spinner {
+    width: 4rem;
+    height: 4rem;
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+    animation: pulse 2s infinite;
+  }
+
+  .loading-text {
+    color: #4b5563;
+    font-size: 1.125rem;
+    text-align: center;
+    margin-bottom: 0.5rem;
+  }
+
+  .loading-subtext {
+    color: #6b7280;
+    font-size: 0.875rem;
+    text-align: center;
+  }
+
+  /* Garantir que elementos críticos tenham estilos mesmo sem Tailwind */
+  .btn-primary {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.75rem;
+    border: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: opacity 0.2s;
+  }
+
+  .btn-primary:hover {
+    opacity: 0.9;
+  }
+
+  .btn-primary:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
   }
 }

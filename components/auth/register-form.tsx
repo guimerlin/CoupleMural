@@ -8,7 +8,21 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Heart, Mail, Lock, Users } from "lucide-react"
+
+let Heart, Mail, Lock, Users
+try {
+  const lucide = require("lucide-react")
+  Heart = lucide.Heart
+  Mail = lucide.Mail
+  Lock = lucide.Lock
+  Users = lucide.Users
+} catch (error) {
+  // Fallback components quando lucide-react não está disponível
+  Heart = () => <span style={{ fontSize: "1rem" }}>💕</span>
+  Mail = () => <span style={{ fontSize: "1rem" }}>📧</span>
+  Lock = () => <span style={{ fontSize: "1rem" }}>🔒</span>
+  Users = () => <span style={{ fontSize: "2rem" }}>👫</span>
+}
 
 interface RegisterFormProps {
   onToggleMode: () => void
