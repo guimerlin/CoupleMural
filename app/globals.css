@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated color palette for romantic couple mural app with gradient style */
+  --background: #fffbeb; /* Light cream background */
+  --foreground: #4b5563; /* Dark gray text */
+  --card: #ffffff; /* White for cards */
+  --card-foreground: #4b5563; /* Dark gray for card text */
+  --popover: #ffffff; /* White popover background */
+  --popover-foreground: #4b5563; /* Dark gray for popover text */
+  --primary: #ea580c; /* Primary orange color */
+  --primary-foreground: #ffffff; /* White for primary button text */
+  --secondary: #f97316; /* Accent orange color */
+  --secondary-foreground: #ffffff; /* White for secondary button text */
+  --muted: #f1f5f9; /* Light gray for muted elements */
+  --muted-foreground: #4b5563; /* Dark gray for muted text */
+  --accent: #f97316; /* Accent color for highlights */
+  --accent-foreground: #ffffff; /* White for accent text */
+  --destructive: #e63946; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White for destructive text */
+  --border: #d1d5db; /* Light gray for borders */
+  --input: #ffffff; /* White for input fields */
+  --ring: rgba(234, 88, 12, 0.3); /* Orange ring for focus */
+  --chart-1: #059669;
+  --chart-2: #10b981;
+  --chart-3: #ea580c;
+  --chart-4: #f97316;
+  --chart-5: #1f2937;
+  --radius: 0.75rem; /* More rounded for playful feel */
+  --sidebar: #ffffff;
+  --sidebar-foreground: #4b5563;
+  --sidebar-primary: #ea580c;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #f97316;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #d1d5db;
+  --sidebar-ring: rgba(234, 88, 12, 0.3);
+}
+
+.dark {
+  /* Dark mode colors maintaining the romantic theme */
+  --background: #1f2937; /* Dark background */
+  --foreground: #f9fafb; /* Light text */
+  --card: #374151; /* Dark card background */
+  --card-foreground: #f9fafb; /* Light card text */
+  --popover: #374151; /* Dark popover */
+  --popover-foreground: #f9fafb; /* Light popover text */
+  --primary: #f97316; /* Brighter orange for dark mode */
+  --primary-foreground: #ffffff; /* White text */
+  --secondary: #ea580c; /* Secondary orange */
+  --secondary-foreground: #ffffff; /* White text */
+  --muted: #4b5563; /* Muted dark gray */
+  --muted-foreground: #9ca3af; /* Light muted text */
+  --accent: #f97316; /* Accent orange */
+  --accent-foreground: #ffffff; /* White accent text */
+  --destructive: #ef4444; /* Red for destructive actions */
+  --destructive-foreground: #ffffff; /* White text */
+  --border: #4b5563; /* Dark border */
+  --input: #374151; /* Dark input background */
+  --ring: rgba(249, 115, 22, 0.3); /* Orange ring */
+  --sidebar: #1f2937;
+  --sidebar-foreground: #f9fafb;
+  --sidebar-primary: #f97316;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #ea580c;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #4b5563;
+  --sidebar-ring: rgba(249, 115, 22, 0.3);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Updated font family variables to match design brief */
+  --font-sans: var(--font-source-sans);
+  --font-serif: var(--font-playfair);
+  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  /* Added gradient utilities for the romantic mural theme */
+  .gradient-romantic {
+    background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+  }
+
+  .gradient-soft {
+    background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 50%, #fdba74 100%);
+  }
+
+  .gradient-card {
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 251, 235, 0.8) 100%);
+    backdrop-filter: blur(10px);
+  }
+}
