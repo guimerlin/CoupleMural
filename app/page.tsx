@@ -12,10 +12,10 @@ export default function HomePage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen gradient-soft flex items-center justify-center">
+      <div className="min-h-screen gradient-soft flex items-center justify-center loading-fallback">
         <div className="text-center">
-          <div className="w-16 h-16 gradient-romantic rounded-full mx-auto mb-4 animate-pulse"></div>
-          <p className="text-muted-foreground">Carregando suas memórias...</p>
+          <div className="w-16 h-16 gradient-romantic rounded-full mx-auto mb-4 animate-pulse loading-spinner"></div>
+          <p className="text-muted-foreground loading-text">Carregando suas memórias...</p>
         </div>
       </div>
     )

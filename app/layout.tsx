@@ -32,6 +32,38 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" className={`${playfair.variable} ${sourceSans.variable}`}>
+      <head>
+        <style
+          dangerouslySetInnerHTML={{
+            __html: `
+            .loading-fallback {
+              min-height: 100vh;
+              background: linear-gradient(135deg, #fffbeb 0%, #fed7aa 50%, #fdba74 100%);
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            }
+            .loading-spinner {
+              width: 4rem;
+              height: 4rem;
+              background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #dc2626 100%);
+              border-radius: 50%;
+              margin: 0 auto 1rem auto;
+              animation: pulse 2s ease-in-out infinite;
+            }
+            @keyframes pulse {
+              0%, 100% { opacity: 1; }
+              50% { opacity: 0.5; }
+            }
+            .loading-text {
+              color: #6b7280;
+              text-align: center;
+            }
+          `,
+          }}
+        />
+      </head>
       <body className="font-sans antialiased">
         <AuthProvider>
           <MusicPlayerProvider>{children}</MusicPlayerProvider>
